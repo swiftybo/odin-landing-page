@@ -8,6 +8,11 @@ body {
     padding: 5px 250px;
 }
 
+.white-container {
+    background-color: white;
+    padding: 5px 250px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -29,7 +34,7 @@ ul {
 }
 
 li {
-    padding-right: 8px;
+    padding-right: 1.5vw;
 }
 
 a {
@@ -69,7 +74,7 @@ button {
 }
 
 img {
-    max-width: 450px;
+    width: 20vw;
     margin-left: auto;
     display: flex;
     flex-shrink: 1;
@@ -84,4 +89,37 @@ img {
     font-size: 48px;
     color: #F9FAF8;
     font-weight: 900;
+}
+
+.recipe-container{
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+.dish {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 228px;
+    min-width: 0;
+    /*The default min-width for flex items is auto meaning that 
+    block elemetns can take up more space resulting in overflow. 
+    This is apparent if min-width is not set to 0 and the page 
+    is shrunk, the dish items will overflow out of the recipe 
+    container.*/
+    
+    /*Note: This also NEEDS to be min-width. Width would not work and 
+    flex-basis also does not work solve the problem of overflow.*/
+    
+}
+
+.dish img{
+    margin-bottom: 0.5em;
+    min-width: 0;
+    /*Also need min-width in the image otherwise overflowing issue 
+    reoccurs. However, this is overflow out of the dish container.*/
+    border: solid #3882f6;
+    /*Border does not appear when 'solid' is not defined in the initial border field.*/
+    border-width: 2px;
+    border-radius: 15px;
 }
